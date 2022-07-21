@@ -11,7 +11,7 @@ namespace SharedLibrary.Extensions
         {
             services.Configure<ApiBehaviorOptions>(options =>
             {
-                options.InvalidModelStateResponseFactory = context =>
+                options.InvalidModelStateResponseFactory = context => //model state invalid oldugunda bir tane response oluştur ama kendim oluşturup dolducam
                 {
                     var errors = context.ModelState.Values.Where(x => x.Errors.Count > 0).SelectMany(x => x.Errors).Select(x => x.ErrorMessage);
 
