@@ -112,7 +112,12 @@ namespace AuthAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AuthAPI v1"));
             }
+            else
+            {
 
+            }
+            //exceptionlar her zaman en üste yazýlýr çünkü bir hata verdiðinde alttakini girmesin diye.
+            app.UseCustomException();
             app.UseHttpsRedirection();
 
             app.UseRouting();
